@@ -32,24 +32,27 @@ while True:
 
     opcion = input("Selecciona el número de una de las opciones: ")
 
-# Codigo de la opción 1
+# Script para la opción 1 (Registrar ingreso de un vehículo)
     if opcion == "1":
         print("\n--- Registro de Ingreso de Vehículo ---")
         print("Seleccione la opción")
         print("1. Registrar un vehículo")
         print("2. Regresar al menú principal")
         
-        if opcion == "1":
+        if opcion == "1": # Seguir con el registro de vehículos
             print("\nTipos de vehículos permitidos: normal, pesado, motocicleta")
             entrada_vehiculo = input("Ingrese el tipo de vehículo: ").lower()
 
-            def entradas_vehiculos(vehiculos_ocupados, tipo_vehiculo): # Definimos la función para registrar el ingreso de vehículos
+            # Definimos la función para registrar el ingreso de vehículos
+            def entradas_vehiculos(vehiculos_ocupados, tipo_vehiculo): 
                 while vehiculos_ocupados < limete_cupos_normal:
                     placa_vehiculo = input("Ahora, ingrese el número de la placa del vehículo: ").upper()
                     # Verificar si la placa ya está registrada
                     if placa_vehiculo in placas_ingresadas:
                         print(f"La placa '{placa_vehiculo}' ya se encuentra registrada en el parqueadero.")
                         continue #Vuelve a solicitar la placa
+
+                    # Continua con el registro si la placa no está registrada
                     else:
                         vehiculos_ocupados += 1
                         placas_ingresadas.append(placa_vehiculo)
@@ -62,9 +65,8 @@ while True:
                         vehiculos_ingresados.append(registro_vehiculo)
                         print(f"¡Éxito! Vehículo con placa '{placa_vehiculo}' (tipo: {tipo_vehiculo}) registrado.")
                         print(f"Cupos ocupados para 'normal': {vehiculos_ocupados}/{limete_cupos_normal}")
-                        break
-                    
-        elif opcion == "2":
+                        break  
+        elif opcion == "2": # Regresar al menú principal
             print("Regresando al menú principal...")
             continue
         
@@ -84,14 +86,14 @@ while True:
         else:
             print("Error: El tipo de vehículo ingresado no es válido. Por favor, elija entre: normal, pesado, motocicleta.")
 
-
-    elif opcion == "2": # Mostrar estado actual de los cupos
+# Script para la opción 2 (Mostrar estado actual de los cupos) 
+    elif opcion == "2":    
             print("\n--- Estado Actual de Cupos ---")
             print(f"Tipo: Normal | Ocupados: {vehiculos_ocupados_normal}/{limete_cupos_normal} | Disponibles: {limete_cupos_normal - vehiculos_ocupados_normal}")
             print(f"Tipo: Pesado | Ocupados: {vehiculos_ocupados_pesados}/{limite_cupos_pesado} | Disponibles: {limite_cupos_pesado - vehiculos_ocupados_pesados}")
             print(f"Tipo: Motocicleta | Ocupados: {vehiculos_ocupados_motocicleta}/{limete_cupo_motocicleta} | Disponibles: {limete_cupo_motocicleta - vehiculos_ocupados_motocicleta}")
 
-    elif opcion == '3': # Ver vehiculos ingresados
+    elif opcion == '3': # Script para la opción 3 (Ver vehículos ingresados)
         if vehiculos_ingresados:
             print("\n--- Listado de Vehículos Ingresados ---")
             for lista, vehiculo in enumerate(vehiculos_ingresados, 1):
@@ -100,20 +102,23 @@ while True:
             print("Aún no se ha registrado ningún vehículo en el sistema.")
             continue
 
-    elif opcion == '4': # Registrar salida de vehículo y calcular tarifa
+# Script para la opción 4 (Registrar salida de vehículo y calcular tarifa)
+    elif opcion == '4': 
         print("\n--- Registro de Salida de Vehículo ---")
         print("1. Seleccione el tipo de vehículo para calcular la tarifa:")
         print("2. Regresar al menú principal:")
         opcion = input("Ingrese el número de la opción: ")
-        if opcion == "1":
+        if opcion == "1": # Sigue con el registro de salida de vehículos
             placa_salida = input("Ingrese la placa del vehículo que desea registrar su salida: ").upper()
             for vehiculo in vehiculos_ingresados:
                 if vehiculo['placa'] == placa_salida:
                     fecha_hora_salida = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    tiempo_entrada = datetime.strptime(vehiculo['fecha_hora_entrada'], "%Y-%m-%d %H:%M:%S")
+                    tiempo_entrada = datetime.strptime(vehiculo['fecha_hora_entrada'], "%Y-%m-%d %H:%M:%S") # Convierte la fecha y hora de la lista en un objeto datetime
                     tiempo_salida = datetime.strptime(fecha_hora_salida, "%Y-%m-%d %H:%M:%S")
-                    duracion = (tiempo_salida - tiempo_entrada).total_seconds() / 60
+                    duracion = (tiempo_salida - tiempo_entrada).total_seconds() / 60 # Calcula la duración en minutos
                     del vehiculos_ingresados[vehiculo]
+
+                    # Hagamos un value error aquí
                 else:
                     print(f"No se encontró la placa '{placa_salida}' en el registro.")
                     continue
@@ -125,10 +130,12 @@ while True:
         else:
             print("Opción no válida. Por favor, ingrese '1' o '2'.")
             continue
+# Script para la opción 5 (Salir del sistema)
     elif opcion == '5':
         print("Saliendo del sistema. ¡Gracias por usar el gestor de parqueadero!")
         break
 
+# Hagamos un value error aquí
     else:
         print("Opción no válida. Por favor, ingrese un número del 1 al 4.")
         
