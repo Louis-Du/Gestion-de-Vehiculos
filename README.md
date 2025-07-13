@@ -30,4 +30,8 @@ Desarrollar una app que gestione entradas, salidas y cobros para tres tipos de v
 
 ## Participantes
 
+-[![eljavi0](https://github.com/eljavi0.png)](https://github.com/eljavi0)
+[![Louis-Du](https://github.com/Louis-Du.png)](https://github.com/Louis-Du)
+[![lukasa133](https://github.com/lukasa133.png)](https://github.com/lukasa133)
+
 
