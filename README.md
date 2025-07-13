@@ -30,13 +30,25 @@ Desarrollar una app que gestione entradas, salidas y cobros para tres tipos de v
 
 ## Participantes
 
-<a href="https://github.com/eljavi0">
-  <img src="https://github.com/eljavi0.png" width="80" />
-</a>
-<a href="https://github.com/Louis-Du">
-  <img src="https://github.com/Louis-Du.png" width="80" />
-</a>
-<a href="https://github.com/lukasa133">
-  <img src="https://github.com/lukasa133.png" width="80" />
-</a>
-
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/eljavi0">
+        <img src="https://github.com/eljavi0.png" width="80" /><br />
+        <sub><b>eljavi0</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Louis-Du">
+        <img src="https://github.com/Louis-Du.png" width="80" /><br />
+        <sub><b>Louis-Du</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lukasa133">
+        <img src="https://github.com/lukasa133.png" width="80" /><br />
+        <sub><b>lukasa133</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
