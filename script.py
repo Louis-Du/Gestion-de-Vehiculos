@@ -1,9 +1,9 @@
 from datetime import datetime
 
 # Cupos máximos por cada tipo de vehículo
-limite_cupos_normal = 5
-limite_cupos_pesado = 3
-limite_cupo_motocicleta = 6
+limite_cupos_normal = 50
+limite_cupos_pesado = 30
+limite_cupo_motocicleta = 60
 
 # Cupos ocupados por cada tipo de vehículo
 vehiculos_ocupados_normal = 0
@@ -19,6 +19,9 @@ tarifa_motocicleta = 141
 vehiculos_ingresados = []
 placas_ingresadas = []
 vehiculos_salidos = []
+
+# Acumulador de dinero total
+total_recaudado = 0
 
 print("--- ¡Bienvenido al Sistema de Gestión de Parqueadero! ---")
 
@@ -172,6 +175,8 @@ while True:
                             print(f"Tiempo de estadía: {int(duracion)} minutos.")
                             print(f"Tarifa por minuto: {tarifa}")
                             print(f"Total a pagar: {total}")
+                            total_recaudado += total # se asigna y se suma todas las tarifas recaudadas
+                            
                                 
                             # Guardar registro de salida
                             vehiculo['fecha_hora_salida'] = fecha_hora_salida
@@ -208,6 +213,8 @@ while True:
                             f"Salida:  {vehiculo['fecha_hora_salida']}")
             else:
                 print("Aún no hay salidas registradas.")
+            
+            print(f"En total se ha recaudado {total_recaudado} pesos")
                     
                              
         elif opcion == "6":
