@@ -1,34 +1,96 @@
 
+# Gestión de Vehículos
 
-# Sistema de Gestión para Parqueadero Multivehicular
+![Python](https://img.shields.io/badge/Language-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows-0078D6?style=flat&logo=linux&logoColor=white)
+![CLI](https://img.shields.io/badge/Interface-Consola-222?style=flat)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
+![Status](https://img.shields.io/badge/Status-En%20desarrollo-success?style=flat)
+![Last commit](https://img.shields.io/github/last-commit/Louis-Du/Gestion-de-Vehiculos?style=flat)
 
-Aplicación de consola para administrar un parqueadero no gratuito, con capacidad para carga pesada, automóviles y motocicletas.
+Aplicación de consola para administrar un parqueadero multivehicular (carga pesada, automóviles y motocicletas). Permite gestionar entradas, salidas, cobros y control financiero.
 
-## Objetivo
+---
 
-Desarrollar una app que gestione entradas, salidas y cobros para tres tipos de vehículos.
+## Tabla de Contenidos
 
-## Requisitos principales
+- [Características](#características)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Pruebas](#pruebas)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
+- [Autores](#autores)
 
-- **Parametrización inicial:**  
-  Configura tarifas por hora y cantidad de cupos por categoría al iniciar la aplicación.
+---
 
-- **Registro de entrada:**  
-  Solicita placa, fecha y hora de ingreso. Valida cupos, unicidad de placa y fechas correctas.
+## Características
 
-- **Registro de salida:**  
-  Solicita fecha y hora de salida. Calcula el tiempo y el cobro. Libera el cupo ocupado.
+- Configuración de tarifas y cupos por tipo de vehículo.
+- Registro de entradas y salidas con validaciones.
+- Cálculo automático de tarifas y control de cupos.
+- Acumulador de pagos y consulta de recaudación diaria.
+- Interfaz por consola, sin base de datos (almacenamiento en memoria).
 
-- **Control financiero:**  
-  Acumula pagos y permite consultar el total recaudado en el día.
+## Estructura del Proyecto
 
-## Tecnologías
+```
+├── gestion_vehiculos/   # Código fuente principal
+│   └── __init__.py
+│   └── README.md
+├── tests/               # Pruebas unitarias
+│   └── test_ejemplo.py
+├── docs/                # Documentación adicional
+│   └── README.md
+├── requirements.txt     # Dependencias
+├── script.py            # Script principal de ejemplo
+├── LICENSE              # Licencia MIT
+└── README.md            # Este archivo
+```
 
-- Aplicación por consola (sin interfaz gráfica)
-- Sin base de datos, almacenamiento en memoria
-- Uso de excepciones y librerías para manejo de fecha y hora (`try`, `except`, `import datetime`, etc.)
+## Instalación
 
-## Participantes
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Louis-Du/Gestion-de-Vehiculos.git
+   cd Gestion-de-Vehiculos
+   ```
+2. Instala las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+
+## Vista previa
+
+A continuación se muestra cómo se ve el programa en ejecución:
+
+![Ejemplo de ejecución](media/CaptureProgram.png)
+
+## Uso
+
+Ejecuta el script principal desde la raíz del proyecto:
+```bash
+python script.py
+```
+
+## Pruebas
+
+Para ejecutar las pruebas automatizadas:
+```bash
+python -m unittest discover tests
+```
+
+## Contribución
+
+¡Las contribuciones son bienvenidas! Por favor, abre un issue o pull request para sugerencias o mejoras.
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Autores
 
 <table>
   <tr>
